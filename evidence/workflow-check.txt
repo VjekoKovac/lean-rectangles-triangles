@@ -1,0 +1,19 @@
+$ actionlint --version
+1.7.7
+installed by downloading from release page
+built with go1.23.4 compiler for linux/amd64
+$ actionlint -shellcheck= -pyflakes= .github/workflows/lean.yml .github/workflows/palomar-preflight.yml
+Exit status 0
+Python/PyYAML check against PalomarSubmission commit 14aa8d6b3c2f14a8540605e37144560b9a00e7e7:
+Palomar submission_request accepted full, maintainer
+Palomar submission_request accepted full, approved
+Palomar submission_request accepted preflight, maintainer
+Palomar submission_request accepted preflight, approved
+Hosted workflows were not run.
+
+Updated automatic Lean build workflow
+$ actionlint -shellcheck= -pyflakes= .github/workflows/lean.yml .github/workflows/palomar-preflight.yml
+Exit status: 0
+$ python3 - (check the push trigger, runner, build, and event filters)
+PASS: push is enabled without branch or file-path filters; the Ubuntu job runs lake build unconditionally.
+No hosted Actions run was observed for this revision.

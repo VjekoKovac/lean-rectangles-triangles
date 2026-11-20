@@ -1,0 +1,112 @@
+$ lake build
+✔ [4007/4077] Built RTS.Combinatorics (5.2s)
+✔ [4008/4077] Built RTS.AnalysisDefs (5.3s)
+✔ [4009/4077] Built RTS.ConfigurationFourier (7.6s)
+⚠ [4010/4077] Built Challenge (7.7s)
+warning: Challenge.lean:218:8: declaration uses `sorry`
+warning: Challenge.lean:221:8: declaration uses `sorry`
+warning: Challenge.lean:224:8: declaration uses `sorry`
+warning: Challenge.lean:227:8: declaration uses `sorry`
+✔ [4012/4077] Built RTS.PrimeProducts (12s)
+✔ [4013/4077] Built RTS.FiniteCircle (13s)
+✔ [4014/4077] Built RTS.TransferencePackets (14s)
+✔ [4015/4077] Built RTS.LiftingBounds (11s)
+✔ [4016/4077] Built RTS.LiftingCounts (12s)
+✔ [4017/4077] Built RTS.CombinatorialProof (11s)
+✔ [4018/4077] Built RTS.PrimitiveSides (14s)
+✔ [4019/4077] Built RTS.Dyadic (19s)
+✔ [4020/4077] Built RTS.CardinalityUpper (8.5s)
+✔ [4021/4077] Built RTS.WeightStatement (13s)
+✔ [4022/4077] Built RTS.AnalysisOrder (7.8s)
+✔ [4023/4077] Built RTS.TransferenceStatement (5.7s)
+✔ [4024/4077] Built RTS.Configuration (7.7s)
+$ lake build
+✔ [4016/4060] Built RTS.LatticeGeometry (7.4s)
+⚠ [4017/4060] Built RTS.SpatialTiling (8.1s)
+warning: RTS/SpatialTiling.lean:45:70: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+✔ [4018/4060] Built RTS.SmoothWeights (11s)
+✔ [4019/4060] Built RTS.PacketBox (11s)
+⚠ [4020/4073] Built RTS.LiftingResidues (15s)
+warning: RTS/LiftingResidues.lean:20:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [4023/4075] Built RTS.FieldCounts (19s)
+✔ [4026/4075] Built RTS.WeightApproximation (19s)
+✔ [4028/4077] Built RTS.CircleLift (21s)
+⚠ [4029/4077] Replayed Challenge
+warning: Challenge.lean:218:8: declaration uses `sorry`
+warning: Challenge.lean:221:8: declaration uses `sorry`
+warning: Challenge.lean:224:8: declaration uses `sorry`
+warning: Challenge.lean:227:8: declaration uses `sorry`
+✔ [4032/4077] Built RTS.ConfigurationCounts (12s)
+✔ [4034/4077] Built RTS.Transference (16s)
+✔ [4035/4077] Built RTS.ConfigurationBridge (14s)
+✔ [4036/4077] Built RTS.RayCharacters (7.7s)
+✔ [4037/4077] Built RTS.GrowthReduction (20s)
+✔ [4038/4077] Built RTS.WeightReduction (6.8s)
+⚠ [4039/4077] Built RTS.LiftingAbel (29s)
+warning: RTS/LiftingAbel.lean:142:66: This simp argument is unused:
+  Nat.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.cast_zero, zero_add, empty, Finset.card_empty, one_pow, sub_zero, div_one] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [4040/4077] Built RTS.ConfigurationProof (5.3s)
+✔ [4041/4077] Built RTS.WeightFamilies (17s)
+✔ [4042/4077] Built RTS.BoxAverages (9.3s)
+✔ [4043/4077] Built RTS.LiftingSieveBounds (8.2s)
+⚠ [4044/4077] Built RTS.PrimitiveSieve (9.3s)
+warning: RTS/PrimitiveSieve.lean:140:55: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [content, Nat.Coprime, M, h]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [4045/4077] Built RTS.PacketIdentities (13s)
+✔ [4046/4077] Built RTS.LiftingInterpolation (11s)
+✔ [4047/4077] Built RTS.WeightCollisions (7.8s)
+✔ [4048/4077] Built RTS.WeightTest (10s)
+✔ [4049/4077] Built RTS.LiftingTuples (16s)
+⚠ [4050/4077] Built RTS.LiftedRays (12s)
+warning: RTS/LiftedRays.lean:39:70: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RTS/LiftedRays.lean:39:70: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [4051/4077] Built RTS.PacketLHS (13s)
+✔ [4052/4077] Built RTS.WeightMultiplicity (11s)
+✔ [4053/4077] Built RTS.CRT (32s)
+✔ [4054/4077] Built RTS.PacketData (13s)
+✔ [4055/4077] Built RTS.LiftingThreshold (16s)
+✔ [4056/4077] Built RTS.WeightRays (11s)
+✔ [4057/4077] Built RTS.WeightEnergy (11s)
+✔ [4058/4077] Built RTS.LiftingTupleCards (6.4s)
+✔ [4059/4077] Built RTS.PacketRHS (6.7s)
+✔ [4060/4077] Built RTS.WeightQuotient (13s)
+✔ [4061/4077] Built RTS.LiftingPrimitiveBounds (9.4s)
+✔ [4062/4077] Built RTS.LiftingPinnedUpper (5.8s)
+✔ [4063/4077] Built RTS.LiftingRectLower (4.6s)
+✔ [4064/4077] Built RTS.CRTMembership (13s)
+✔ [4065/4077] Built RTS.WeightScales (5.0s)
+✔ [4066/4077] Built RTS.Weights (2.9s)
+✔ [4067/4077] Built RTS.ContinuousTransference (9.1s)
+✔ [4068/4077] Built RTS.GeometricResidues (5.4s)
+✔ [4069/4077] Built RTS.TransferenceProof (6.0s)
+✔ [4070/4077] Built RTS.GeometricLift (6.9s)
+✔ [4071/4077] Built RTS.LiftingAssembly (13s)
+✔ [4072/4077] Built RTS.FixedModulus (6.2s)
+✔ [4073/4077] Built RTS.CombinatorialTheorem (12s)
+✔ [4074/4077] Built RTS (3.2s)
+✔ [4076/4077] Built Solution (3.4s)
+Build completed successfully (4077 jobs).
+Exit status: 0

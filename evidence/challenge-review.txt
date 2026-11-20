@@ -1,0 +1,5 @@
+$ lake env lean Challenge.lean
+Challenge.lean:218:8: warning: declaration uses `sorry`
+Challenge.lean:221:8: warning: declaration uses `sorry`
+Challenge.lean:224:8: warning: declaration uses `sorry`
+Challenge.lean:227:8: warning: declaration uses `sorry`

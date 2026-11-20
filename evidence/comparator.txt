@@ -1,0 +1,55 @@
+$ bash evidence/host/run.sh bash scripts/compare.sh comparator.json
+Resolving dependencies
+Building Challenge
+⚠ [3069/3070] Replayed Challenge
+warning: Challenge.lean:218:8: declaration uses `sorry`
+warning: Challenge.lean:221:8: declaration uses `sorry`
+warning: Challenge.lean:224:8: declaration uses `sorry`
+warning: Challenge.lean:227:8: declaration uses `sorry`
+Build completed successfully (3070 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, RTS.combinatorial_growth, RTS.quantitative_transference, RTS.configuration_lower_bounds, RTS.trigonometric_growth, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+⚠ [4014/4044] Replayed RTS.LiftingResidues
+warning: RTS/LiftingResidues.lean:20:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [4015/4044] Replayed RTS.LiftingAbel
+warning: RTS/LiftingAbel.lean:142:66: This simp argument is unused:
+  Nat.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.cast_zero, zero_add, empty, Finset.card_empty, one_pow, sub_zero, div_one] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [4019/4044] Replayed RTS.PrimitiveSieve
+warning: RTS/PrimitiveSieve.lean:140:55: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [content, Nat.Coprime, M, h]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [4039/4073] Replayed RTS.LiftedRays
+warning: RTS/LiftedRays.lean:39:70: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RTS/LiftedRays.lean:39:70: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [4042/4073] Replayed RTS.SpatialTiling
+warning: RTS/SpatialTiling.lean:45:70: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲
+Build completed successfully (4073 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, RTS.combinatorial_growth, RTS.quantitative_transference, RTS.configuration_lower_bounds, RTS.trigonometric_growth, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!
+Exit status: 0

@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "RTS.combinatorial_growth",
+    "RTS.quantitative_transference",
+    "RTS.configuration_lower_bounds",
+    "RTS.trigonometric_growth"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "enable_nanoda": true
+}

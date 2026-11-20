@@ -1,0 +1,4 @@
+$ lake env lean --version
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+$ lake env lean -DwarningAsError=true reviews/PrimeThree.lean
+'RTSReview.PrimeThree.check_prime_three' depends on axioms: [propext, Classical.choice, Quot.sound]

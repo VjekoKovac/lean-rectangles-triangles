@@ -1,0 +1,12 @@
+# Configuration lower bounds (Theorem 1.4)
+
+The domain is the spatial two-dimensional unit torus with one unit time period, all equipped with probability Haar measure. The radius $N ≥ 1$ is real. The support cardinality $n ≥ 1$ is an integer. For the Stein inequality the sharp constant dominates the unpinned rectangle/triangle ratio, both at radius $N$ and at exact cardinality $n$. For Mizohata–Takeuchi the same two lower bounds use the pinned ratio. All four constants in front of the ratios are exactly one. The counts include every ordering and every degeneracy.
+
+## How the test works
+
+1. Choose a nonempty finite subset $A$ of the integer lattice in two dimensions. Give each frequency in $A$ coefficient one and each frequency outside $A$ coefficient zero. The test solution $u_A$ is its periodic Schrödinger evolution. Its initial squared $L^2$ norm is the cardinality of $A$. Use the continuous, nonnegative weight $w=|u_A|^2$.
+2. The weighted left side is the fourth moment of $u_A$. The squared wave is the sum over ordered pairs $(a,c)$ in $A^2$, each carrying spacetime frequency $(a+c,|a|^2+|c|^2)$. Haar orthogonality counts the ordered pairs of pairs with equal frequency. Substituting $c=b+e-a$ into the energy equation gives $2(b-a)·(e-a)=0$. Thus the fourth moment equals the ordered rectangle count.
+3. On a ray $x-2tk$, frequency $a$ has time frequency $|a|^2-2a·k$. Time integration of the squared modulus leaves the ordered pairs with equal time frequency. The equality is equivalent to $(2k-a-b)·(b-a)=0$, the triangle condition at apex $k$. Each surviving spatial phase has modulus one, so the ray integral is at most the pinned triangle count. At $x=0$ all phases equal one, giving equality. The upper bound alone suffices for the four inequalities.
+4. For Stein, summing the pinned counts over $k$ in $A$ gives the total triangle count. For Mizohata–Takeuchi, replace the sum by the largest pinned count times the cardinality of $A$. Apply the inequalities to the test weight, divide by the corresponding denominator, and vary $A$ under the box condition or exact-size condition. The sharp weighted constants are infima of admissible constants in the extended nonnegative reals.
+
+The relevant mathlib ingredients are AddCircle's orthonormal Fourier characters, the product integral formula, linearity of finite sums under integration, and the triangle inequality for a finite complex sum. The proofs specialize these to the normalization above.

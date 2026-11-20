@@ -1,0 +1,10 @@
+$ lake env lean --stdin
+import PrimeNumberTheoremAnd.Consequences
+#check chebyshev_asymptotic_pnt
+#print axioms chebyshev_asymptotic_pnt
+--- Lean output ---
+chebyshev_asymptotic_pnt {q a : ℕ} (hq : q ≥ 1) (ha : a.Coprime q) (ha' : a < q) :
+  Asymptotics.IsEquivalent Filter.atTop (fun x => ∑ p ≤ ⌊x⌋₊ with Nat.Prime p, if p % q = a then Real.log ↑p else 0)
+    fun x => x / ↑q.totient
+'chebyshev_asymptotic_pnt' depends on axioms: [propext, Classical.choice, Quot.sound]
+Exit status: 0

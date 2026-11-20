@@ -1,0 +1,27 @@
+name: Lean build
+
+"on":
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    name: Build and verify Lean proofs
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1
+        with:
+          auto-config: "false"
+          use-mathlib-cache: "true"
+      - name: Build the project
+        run: lake build
+      - run: python3 scripts/check-source.py
+      - run: python3 scripts/check-axioms.py
+      - name: Replay independent finite examples
+        run: |
+          for file in reviews/*.lean; do lake env lean -DwarningAsError=true "$file"; done

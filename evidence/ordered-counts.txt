@@ -1,0 +1,2 @@
+$ lake env lean -DwarningAsError=true reviews/OrderedCounts.lean
+'RTSReview.OrderedCounts.check_ordered_counts' depends on axioms: [propext, Classical.choice, Quot.sound]

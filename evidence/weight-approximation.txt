@@ -1,0 +1,2 @@
+$ lake env lean -DwarningAsError=true RTS/WeightApproximation.lean
+exit status 0

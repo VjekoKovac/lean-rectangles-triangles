@@ -1,0 +1,21 @@
+$ lake env leanchecker -v RTS.Combinatorics
+replaying RTS.Combinatorics
+exit status 0
+$ lake env leanchecker -v RTS.AnalysisDefs
+replaying RTS.AnalysisDefs
+exit status 0
+$ lake env leanchecker -v RTS.Configuration
+replaying RTS.Configuration
+exit status 0
+$ lake env leanchecker -v RTS.ConfigurationFourier
+replaying RTS.ConfigurationFourier
+exit status 0
+$ lake env leanchecker -v RTS.ConfigurationCounts
+replaying RTS.ConfigurationCounts
+exit status 0
+$ lake env leanchecker -v RTS.ConfigurationBridge
+replaying RTS.ConfigurationBridge
+exit status 0
+$ lake env leanchecker -v RTS.ConfigurationProof
+replaying RTS.ConfigurationProof
+exit status 0

@@ -1,0 +1,33 @@
++ mkdir -p /tmp/rts-meta-check
++ curl --silent --show-error --fail --location https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json --output /tmp/rts-meta-check/schema.json
++ curl --silent --show-error --fail --location https://codeload.github.com/PalomarRegistry/PalomarSubmission/tar.gz/14aa8d6b3c2f14a8540605e37144560b9a00e7e7 --output /tmp/rts-meta-check/palomar.tgz
++ tar xzf /tmp/rts-meta-check/palomar.tgz -C /tmp/rts-meta-check
++ sha256sum /tmp/rts-meta-check/schema.json /tmp/rts-meta-check/palomar.tgz
+25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce  /tmp/rts-meta-check/schema.json
+92014eef13780a1b2164b27f4bfa4a0254db9182c21504b6f08bd1e0f19b72ad  /tmp/rts-meta-check/palomar.tgz
++ python3 scripts/check-metadata.py /tmp/rts-meta-check/PalomarSubmission-14aa8d6b3c2f14a8540605e37144560b9a00e7e7 /tmp/rts-meta-check/schema.json
+Python 3.12.14 | jsonschema 4.26.0 | PyYAML 6.0.3
+formalization.yaml SHA-256: 4b4f25bd99039b034c2443a160843ff128dca0a542902b816ac45d4964f2e87a
+Upstream JSON Schema v0.4: PASS
+Palomar metadata and provenance: PASS
+Result origin: source-based
+Repository role: substantive-development
+Comparator configuration, four alignment entries, axiom names and author lists: PASS
+Supported Lean toolchain: leanprover/lean4:v4.35.0
+Palomar root license file: LICENSE
+Palomar Lean source-format checks: PASS for 72 files
+Exit status: 0
+
+Updated description: validation for the files in this ZIP
+$ python3 scripts/check-metadata.py ../PalomarSubmission-14aa8d6b3c2f14a8540605e37144560b9a00e7e7 ../validators/schema.json
+Python 3.12.14 | jsonschema 4.26.0 | PyYAML 6.0.3
+formalization.yaml SHA-256: 184ffeb9ba2766d8ffdec16ba009f04f65f9f50b902871d579c9f2231143ddf6
+Upstream JSON Schema v0.4: PASS
+Palomar metadata and provenance: PASS
+Result origin: source-based
+Repository role: substantive-development
+Comparator configuration, four alignment entries, axiom names and author lists: PASS
+Supported Lean toolchain: leanprover/lean4:v4.35.0
+Palomar root license file: LICENSE
+Palomar Lean source-format checks: PASS for 72 files
+Exit status: 0

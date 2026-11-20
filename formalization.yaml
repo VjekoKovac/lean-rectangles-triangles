@@ -1,0 +1,160 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Rectangles, triangles and Schrödinger waves"
+  description: >-
+    For a nonempty finite set A ⊂ ℤ², let B(A) count the ordered quadruples (a,b,c,e)
+    in A⁴ with a+c=b+e and (b−a)·(e−a)=0. For k ∈ A, let Tₖ(A) count the ordered
+    pairs (a,b) in A² equidistant from k. Both counts include repeated vertices.
+    Let R(N) and P(N) be the respective suprema of B(A)/(∑ₖ∈A Tₖ(A)) and
+    B(A)/(|A| maxₖ∈A Tₖ(A)) over A ⊂ [−N,N]² ∩ ℤ². Write R̃(n) and P̃(n)
+    for the same suprema over all A ⊂ ℤ² of exactly n points.
+
+    Theorem 1.2. Put G(c,x) = (log x)^(c / log(log(log x))), with natural logarithms.
+    There exist a single absolute real c > 0, a real N₀ and a positive integer n₀
+    such that R(N) ≥ P(N) ≥ G(c,N) for every real N ≥ N₀, and
+    R̃(n) ≥ P̃(n) ≥ G(c,n) for every integer n ≥ n₀.
+
+    For X = ℝᵈ or 𝕋ᵈ, let S(X,N) and M(X,N) be the optimal constants in the
+    Stein and Mizohata–Takeuchi weighted Schrödinger inequalities, respectively,
+    for Fourier support in the closed cube [−N,N]ᵈ. Here 𝕋 = ℝ/ℤ carries
+    normalized Haar measure. On the torus, S̃(𝕋ᵈ,n) and M̃(𝕋ᵈ,n) denote the
+    corresponding constants for exactly n nonzero Fourier coefficients at
+    arbitrary lattice frequencies.
+
+    Theorem 1.3. For every integer d ≥ 1 and real N ≥ 1,
+    S(𝕋ᵈ,N) ≤ S(ℝᵈ,N+1) and M(𝕋ᵈ,N) ≤ M(ℝᵈ,N+1).
+
+    Theorem 1.4. For every real N ≥ 1 and integer n ≥ 1,
+    R(N) ≤ S(𝕋²,N), P(N) ≤ M(𝕋²,N),
+    R̃(n) ≤ S̃(𝕋²,n), and P̃(n) ≤ M̃(𝕋²,n).
+
+    Theorem 1.5. For each integer d ≥ 1 there are positive real constants a_d,
+    b_d and B_d, a real N_d ≥ 1 and an integer n_d ≥ 1 such that, for every
+    real N ≥ N_d, both S(𝕋ᵈ,N) and M(𝕋ᵈ,N) are at least a_d (log N)^d.
+    For every integer n ≥ n_d, one has b_d n ≤ S̃(𝕋ᵈ,n) ≤ B_d n and
+    b_d n ≤ M̃(𝕋ᵈ,n) ≤ B_d n.
+  authors:
+    - "Jonathan Bennett"
+    - "Vjekoslav Kovač"
+    - "Shohei Nakamura"
+    - "Itamar Oliveira"
+  responsible_maintainers: ["Vjekoslav Kovač"]
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math.CA"]
+  msc2020: ["42B10", "44A12", "05B40"]
+
+sources:
+  - title: "Rectangles, triangles and Schrödinger waves"
+    authors: ["Jonathan Bennett", "Vjekoslav Kovač", "Shohei Nakamura", "Itamar Oliveira"]
+    type: "paper"
+    id: "arXiv:2606.30178v1"
+    location: "https://arxiv.org/abs/2606.30178v1"
+    relationship: "formalizes"
+    note: "Introduction, Theorems 1.2–1.5, with proofs in Sections 2, 3.1, 4, and 5."
+
+related_formalizations:
+  - id: "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/tree/a4fb6989b07e9c76b511807ae93e33e25b820e9b"
+    relationship: "builds-on"
+    note: >-
+      RTS.PrimeProducts applies chebyshev_asymptotic_pnt from
+      PrimeNumberTheoremAnd.Consequences to the progression 3 modulo 4.
+  - id: "https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679"
+    relationship: "builds-on"
+    note: >-
+      The proofs use Mathlib's Fourier characters and Parseval on tori, Haar
+      integration, finite fields, Chinese remainder theorem, number-theoretic
+      functions, asymptotics, and arithmetic tactics.
+
+status:
+  scope: >-
+    The four Solution declarations prove the introductory theorems. Item 1.1
+    is a question. The project targets the stated lower and upper bounds and
+    the sharp comparisons. Separate results elsewhere in the paper, including
+    the qualitative reverse transference in Section 3.2 and the full auxiliary
+    lattice asymptotics of Lemma 2.4, are outside this scope. Challenge.lean
+    supplies the four isolated statement placeholders used for comparison.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["GPT-6"]
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Multiple AI agents developed Lean modules and inspected statements and
+        proof steps. Computations use kernel-checked tactics such as decide,
+        norm_num, omega, ring, and linarith. The build uses Lean 4.35.0 with
+        pinned Mathlib and PrimeNumberTheoremAnd dependencies.
+      cost:
+        wall_time: "Not metered"
+        spend_usd: "Not tracked"
+        hardware: "Hosted Linux workspace"
+      prompting_notes: >-
+        The requester specified the four source theorems, source and
+        formalization authorship, close adherence to the proofs, independent
+        statement and proof checks, and a three-axiom Comparator policy.
+  notes: >-
+    The four individuals listed as formalization authors are the authors
+    designated by the requester. AI participation in writing and review is
+    recorded here.
+
+fidelity:
+  divergences: >-
+    The first proof retains the modular construction, lifting, and exact-size
+    interpolation. It uses one-sided absolute estimates sufficient for the
+    stated growth and chooses a set of m suitable primes using the prime
+    number theorem in arithmetic progressions. The transference proof uses
+    normalized rectangular frequency packets and makes the smoothing of
+    weights explicit. Euclidean data use their square-integrable frequency
+    profiles and closed essential support. Pointwise X-ray integrals use the
+    nonnegative lower integral to specify values on exceptional lines.
+    The configuration estimates include repetitions and all orderings.
+    For the final theorem an injection of marked subset tuples into collision
+    pairs yields the same lower bound as the paper's binary-frequency
+    counting. The proof details and source comparisons appear in blueprints/
+    and reviews/statement-fidelity.md.
+
+review:
+  status: "agent-reviewed"
+  reviewers: ["OpenAI Codex (separate AI reviewer)"]
+  notes: >-
+    A separate AI reviewer compared the standalone Challenge with the
+    versioned paper and the uploaded TeX and inspected the mathematical
+    proof paths. The reviews identify analytic conventions and proof
+    modifications. Kernel and Comparator results have their own logs in
+    evidence/. No human review or registry decision is recorded.
+
+alignment:
+  namespace: "RTS"
+  statements:
+    - source: "Theorem 1.2 (thm:combinatorics)"
+      lean: "RTS.combinatorial_growth"
+      module: "Solution"
+      status: "proved"
+      note: "One absolute positive exponent constant for all sufficiently large box radii and exact cardinalities."
+    - source: "Theorem 1.3 (thm:quant-transference-intro)"
+      lean: "RTS.quantitative_transference"
+      module: "Solution"
+      status: "proved"
+      note: "Both sharp inequalities for each integer d ≥ 1 and real N ≥ 1, with enlarged Euclidean radius N+1."
+    - source: "Theorem 1.4 (thm:config-lower-intro)"
+      lean: "RTS.configuration_lower_bounds"
+      module: "Solution"
+      status: "proved"
+      note: "Four comparisons in dimension two for each real N ≥ 1 and each positive integer n."
+    - source: "Theorem 1.5 (thm:d1-log-intro)"
+      lean: "RTS.trigonometric_growth"
+      module: "Solution"
+      status: "proved"
+      note: "Both box lower bounds and both two-sided exact-cardinality estimates in every positive dimension."
+
+acknowledgements: >-
+  The proofs use Lean, Mathlib, and PrimeNumberTheoremAnd and credit their
+  contributors. The repository structure follows the example of roos-j/lean-dfr
+  and the metadata and checking conventions of Palomar.

@@ -1,0 +1,8 @@
+$ python3 scripts/check-axioms.py
+$ lake env lean AxiomReport.lean
+'RTS.combinatorial_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RTS.quantitative_transference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RTS.configuration_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RTS.trigonometric_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+Accepted 4 axiom reports
+Exit status: 0
